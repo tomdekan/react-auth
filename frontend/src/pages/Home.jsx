@@ -26,6 +26,7 @@ function Home() {
         <div>
           <p>Hi there {user?.username}!</p>
           <p>You are logged in.</p>
+          <p>{user?.secret_fact}</p>
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (

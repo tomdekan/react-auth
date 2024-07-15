@@ -6,7 +6,6 @@ export const useAuthStore = create(
     (set, get) => ({
       user: null,
       isAuthenticated: false,
-      secretFact: "",
 
       setCsrfToken: async () => {
         const response = await fetch('http://localhost:8000/api/set-csrf-token', {
