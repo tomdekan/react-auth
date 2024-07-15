@@ -171,3 +171,9 @@ const handleSubmit = async (e) => {
   }
 };
 ```
+
+
+
+## Bonus: Add Tailwind
+
+https://tailwindcss.com/docs/guides/vite

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 
@@ -7,7 +7,7 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchUser();
+    void fetchUser();
   }, [fetchUser]);
 
   const handleLogout = async () => {
@@ -20,7 +20,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="2">
       <h1>Welcome to the home page</h1>
       {isAuthenticated ? (
         <div>
@@ -29,8 +29,10 @@ function Home() {
           <button onClick={handleLogout}>Logout</button>
         </div>
       ) : (
-        <p>
-          You are not logged in. <Link to="/login">Login</Link>
+        <p className="flex flex-col">
+          You are not logged in.
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
         </p>
       )}
     </div>

@@ -14,9 +14,12 @@ def get_csrf_token(request):
     return {"csrftoken": get_token(request)}
 
 
-@api.post("/login", auth=django_auth)
+@api.post("/login")
 def login_view(request, payload: schemas.SignInSchema):
+    print(f'{payload.email = }')
+    print(f'{payload.password = }')
     user = authenticate(request, username=payload.email, password=payload.password)
+    print(f'{user = }')
     if user is not None:
         login(request, user)
         return {"success": True}
@@ -31,13 +34,21 @@ def logout_view(request):
 
 @api.get("/user", auth=django_auth)
 def user(request):
-    return {"username": request.user.username, "email": request.user.email}
+    secret_fact = (
+        "You wonder which of your past choices "
+        "are the most significant"
+    )  # Sample data that only a logged-in user can access.
+    return {
+        "username": request.user.username, "email": request.user.email,
+        "secret_fact": secret_fact
+    }
 
 
-@api.post("/register", auth=django_auth)
+@api.post("/register")
 def register(request, payload: schemas.SignInSchema):
     try:
-        user = User.objects.create_user(username=payload.username, email=payload.email, password=payload.password)
+        user = User.objects.create_user(username=payload.email, email=payload.email, password=payload.password)
+        print(f'{user = }')
         return {"success": "User registered successfully"}
     except Exception as e:
         return {"error": str(e)}

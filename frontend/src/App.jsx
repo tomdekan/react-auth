@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
@@ -13,7 +13,7 @@ function App() {
   }, [setCsrfToken]);
 
   return (
-    <div className="App">
+    <div className="p-10 m-auto w-1/2 flex gap-2">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
