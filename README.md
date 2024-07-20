@@ -9,9 +9,11 @@ I'll also show you 5 things that you'll want to do when adding auth:
 3. How to add persistent state (e.g., refreshing the page and still being logged in) using simple local storage
 4. How to register new users
 5. Secure and simple auth using Django's in-built session authentication
-6. 
-For my parallel guide for Vue.js and Django, see [Use Vue with Django (including Auth) in 15 mins 🍒](https://www.photondesigner.com/articles/vue-auth){:target="_blank}
+
 
 React and Django Ninja are an excellent combination. Let's start! 🏎
 
 👉 See the full written guide here: https://www.photondesigner.com/articles/react-auth
+
+
+(For my parallel guide for Vue.js and Django, see [Use Vue with Django (including Auth) in 15 mins 🍒](https://www.photondesigner.com/articles/vue-auth))
